@@ -1,0 +1,43 @@
+// File: ep/[ServiceName].go
+package ep
+
+import (
+	"log"
+	"fmt"
+	"github.com/Peter-Bird/ws"
+)
+
+/*
+	Steps for AI to Generate a New Service:
+
+	1. Replace [ServiceName] in the template with the desired service name.
+	2. Implement custom logic in the Process() method to perform specific
+	   tasks relevant to the service.
+	3. Ensure any necessary packages or imports are included as needed for
+	   the service logic.
+
+*/
+
+// [ServiceName] struct implementing the Service interface
+type [ServiceName] struct{}
+
+// init function to register the service with the ws package
+func init() {
+	ws.RegisterService("[ServiceName]", func() ws.Service { return &[ServiceName]{} })
+}
+
+// Process method for [ServiceName]Service
+func (s [ServiceName]) Process(input map[string]interface{}) (map[string]interface{}, error) {
+	log.Printf("[ServiceName] invoked")
+
+	// Custom processing logic for [ServiceName]
+	// Replace with actual logic for this service
+
+	output := map[string]interface{}{
+		"result": fmt.Sprintf("[ServiceName] received input: %v", input),
+	}
+
+	// You can add more detailed logic as needed
+	
+	return output, nil
+}
